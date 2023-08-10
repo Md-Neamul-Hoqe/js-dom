@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JavaScript Initial Info</title>
+  <link rel="shortcut icon" href="js-icon.png" type="image/x-icon" />
+  <style>
+    label {
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 5px;
+    }
+
+    .fieldset-1 div input:last-child {
+      display: block;
+    }
+
+    input {
+      border-radius: 5px;
+      border: 1px solid rgb(190, 190, 190);
+      padding: 10px 20px;
+    }
+
+    .btn {
+      margin-top: 5px;
+      /* float: left; */
+      color: blue;
+      cursor: pointer;
+      font-weight: bold;
+      background-color: yellowgreen;
+    }
+
+    body {
+      background: url("./js-icon.png") center center no-repeat;
+      background-size: calc(100vw/2);
+      min-height: 100vh;
+      /* background-size: cover; */
+    }
+
+    .fieldset-1 {
+      display: flex;
+      align-items: center;
+      border-radius: 5px
+    }
+
+    .fieldset {
+      margin-left: 100px;
+      border-radius: 5px;
+      min-width: 100px;
+      text-align: center;
+    }
+
+    .fieldset legend {
+      color: green;
+      font-weight: bold
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Js Work In Console</h1>
+  <form>
+    <fieldset class="fieldset-1">
+      <legend>Calculator</legend>
+      <div class="input">
+        <label for="num1">Input Apple Price:</label>
+        <input type="text" name="num1" id="num1" placeholder="Input The Value..." required />
+        <label for="num2">Input Banana Price:</label>
+        <input type="text" name="num2" id="num2" placeholder="Input The Value..." required />
+        <input class="btn" type="button" value="Calculate" onclick="Buy()" />
+      </div>
+      <fieldset class="fieldset">
+        <legend>Output</legend>
+        <input type="button" name="ans" id="Ans" value="?" />
+      </fieldset>
+    </fieldset>
+  </form>
+
+  <script>
+
+    function Buy() {
+      console.log("Buy() function called.");
+      let numberOne = document.getElementById("num1").value | 0,
+        numberTwo = document.getElementById("num2").value | 0;
+      console.log(numberOne, numberTwo);
+      document.getElementsByName('num1')[0].placeholder = numberOne;
+      document.getElementsByName('num2')[0].placeholder = numberTwo;
+      function addNums() {
+        return numberOne + numberTwo;
+      }
+      document.getElementById("Ans").value = 'The sum is :' + addNums();
+      // console.log(ans);
+    }
+    // var numberOne = document.getElementById("num1").value || 0,
+    //   numberTwo = document.getElementById("num2").value || 0,
+    //   ans = numberOne + numberTwo;
+    // console.log("the answer is: ", ans);
+    // document.getElementById("Ans").value = ans;
+
+  </script>
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
