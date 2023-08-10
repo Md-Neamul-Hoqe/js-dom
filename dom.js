@@ -2,7 +2,7 @@
 /* the path of this (html) page */
 console.log(document.baseURI);
 console.log(document.URL);
-
+// document.style.boxSizing = "border-box";
 /**
  * ============================
  *  Get DOM Elements and add styles
@@ -32,7 +32,7 @@ const containerSection = document.getElementsByClassName("container-section");
 for (let index = 0; index < containerSection.length; index++) {
   //   console.log(containerSection[index]);
   const element = containerSection[index];
-  element.style.width = "500px";
+  element.style.minWidth = "500px";
 }
 
 const practiceSection = document.getElementById("practice-section");
@@ -46,45 +46,41 @@ practiceSection.style.minHeight = "100vh";
 
 // console.log(practiceSection);
 
-const colorPicker = document.getElementsByName("color");
+const colorPicker = document.getElementById("colorChecker");
 
-for (let index = 0; index < colorPicker.length; index++) {
-  const element = colorPicker[index];
-  // const elementFocus = colorPicker[index].onfocus();
-  console.log(element);
-  element.style.width = "150px";
-  element.style.height = "150px";
-  element.style.padding = "15px";
-  element.style.borderWidth = "10px";
-  element.style.borderRadius = "50%";
-  element.style.borderColor = "blue";
-  element.style.backgroundColor = "red";
-  element.onfocus = function () {
-    element.style.backgroundColor = "magenta";
-    element.style.borderRadius = "50%";
-  };
-}
+// console.log(colorPicker.childNodes);
+colorPicker.childNodes[3].style.width = "120px";
+colorPicker.childNodes[3].style.height = "120px";
+colorPicker.childNodes[3].style.marginTop = "-10px";
+colorPicker.childNodes[3].style.marginLeft = "-10px";
+colorPicker.style.width = "100px";
+colorPicker.style.height = "100px";
+colorPicker.style.borderRadius = "50%";
+colorPicker.style.overflow = "hidden";
 
 const paragraph = document.getElementsByTagName("p");
 for (let index = 0; index < paragraph.length; index++) {
   const element = paragraph[index];
-  const element1 = paragraph[index][0];
+  element.style.width = "300px";
 
   element.style.color = "gray";
   element.style.textAlign = "justify";
   element.style.padding = "30px";
   element.style.borderRadius = "20px";
   element.style.borderWidth = "0 10px";
-  element.style.borderStyle = "solid";
+  element.style.borderStyle = "double";
   element.style.borderColor = "purple";
 }
+
 const fieldset = document.querySelector("fieldset");
-// console.log(fieldset.childNodes);
-fieldset.childNodes[3].style.display = "inline-block";
-fieldset.childNodes[3].style.minWidth = "3rem";
-fieldset.childNodes[3].style.height = "3rem";
-fieldset.childNodes[3].style.border = "3px solid red";
-fieldset.childNodes[3].style.padding = "1.5rem 1rem 0";
+
+fieldset.childNodes[3].style.minWidth = "calc((100%*8)/12)";
+fieldset.childNodes[3].style.height = "2rem";
+fieldset.childNodes[3].style.border = "0px solid red";
+fieldset.childNodes[3].style.paddingLeft = "1.5rem";
+
+fieldset.childNodes[5].style.minWidth = "calc((100%*3.2319)/12)";
+fieldset.childNodes[5].style.height = "2rem";
 
 /*  */
 const queryAllButtons = document.querySelectorAll("button");
@@ -99,22 +95,21 @@ for (let index = 0; index < queryAllButtons.length; index++) {
 
 /**
  * ===========================
- *  Add Event To The Element/s
+ *  Add Event/s To The Element/s
  * ===========================
  * */
 
+/* tel-name-hover */
 const queryAllAnchor = document.querySelectorAll("a");
 for (let index = 0; index < queryAllAnchor.length; index++) {
   const element = queryAllAnchor[index];
   //   element.style.borderWidth = "10px";
-  element.style.border = "10px inset violet";
+  element.style.border = "3px inset violet";
   element.style.padding = "10px 20px";
   element.style.textDecoration = "none";
-  //   element.style.borderImage = 'url("./js-icon.png") 30 round';
-  //   element.style.backgroundClip = "content-box";
   element.style.borderRadius = "5px";
 
-  /* Hover effect */
+  /* Hover effect using DOM events */
   element.onmouseenter = function () {
     element.style.backgroundColor = "blue";
     element.style.color = "white";
@@ -130,6 +125,6 @@ for (let index = 0; index < queryAllAnchor.length; index++) {
 
 /**
  * ===============================
- *
+ *  Animation Using JS
  * ===============================
  * */

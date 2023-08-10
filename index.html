@@ -8,7 +8,7 @@
     <!-- <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon"> -->
 </head>
 
-<body>
+<body style="box-sizing: border-box;">
     <header id="practice-section">
         <div class="container-section">
             <h1>Practice JS DOM using this page.</h1>
@@ -25,22 +25,21 @@
                 <aside class="right-side"></aside>
             </div>
 
+            <!-- form validation -->
             <fieldset>
                 <legend>Use Js To Change The Values</legend>
-                <label for="color">select color</label>
-                <input type="color" name="color" id="colorChecker" placeholder="Please select a color" value="#00A365"
-                    title="Please Select a color you want." size="25">
-                <input type="email" name="email"
-                    style="border-radius: 100%; background-color: green; height: 100px; width: 100px; padding: 50px;"
-                    id="EmailAddress" placeholder="Email De Eno..">
+                <input type="email" name="email" id="EmailAddress" placeholder="Email Address..">
                 <input type="button" value="button">
             </fieldset>
 
-            <form id="formField">
-                <input type="email" name="email" id="EmailAddress" placeholder="Email De Eno..">
-                <input type="submit" value="button" onclick="validationField()">
+            <!-- rounded color picker -->
+            <form id="colorChecker" style="margin: 2rem auto 0;">
+                <label for="color" style="display: none;">select color</label>
+                <input type="color" name="color" placeholder="Please select a color" value="#00A365"
+                    title="Please Select a color you want." size="25">
             </form>
-            
+
+
             <table>
                 <thead>
                     <tr>
@@ -64,13 +63,6 @@
             </table>
         </div>
     </header>
-
-    <!-- <input type="color" name="color" id="colorChecker" placeholder="Please select a color" value="#00A365"
-        title="Please Select a color you want." size="25"
-        style="width: 150px; height: 150px;  border-width: 10px; border-radius: 50%; border-color: blue; background-color: red;"> -->
-<!-- ami cachi shudhu color picker circular korte. css diye hok ba js diye. js diye try koresi kintu hoy na. assa. jhajakalloh -->
-
-    <div style="border-radius: 50%; background-color: yellow; width: 150px; height: 150px;"></div>
 
     <script src="./dom.js"></script>
 </body>
